@@ -5,19 +5,50 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        color: const Color.fromARGB(255, 106, 125, 140),
-        margin: EdgeInsets.all(50),
-        child: Text(
-          'Hello, World!',
-          style: TextStyle(
-            fontSize: 24,
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          color: Colors.redAccent,
+          padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+          child: const Text(
+            'Hello',
+            style: TextStyle(
+              fontSize: 20, 
+              color: Colors.white
+              fontWeight: FontWeight.bold,
+              letterSpacing: 3,
+            ),
           ),
-        )
-      ),
+        ),
+        Container(
+          color: Colors.greenAccent,
+          padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+          child: const Text(
+            'Hello',
+            style: TextStyle(
+              fontSize: 20, 
+              color: Colors.white
+              fontWeight: FontWeight.bold,
+              letterSpacing: 3,
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.blue,
+          padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+          child: const Text(
+            'Hello',
+            style: TextStyle(
+              fontSize: 20, 
+              color: Colors.white
+              fontWeight: FontWeight.bold,
+              letterSpacing: 3,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
