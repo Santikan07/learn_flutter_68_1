@@ -5,19 +5,90 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Image.asset('assets/images/1.webp',width: 200,height: 200,),
-        SizedBox(height: 20),
-      
-        Image.network(
-          'https://th.bing.com/th/id/OIP.4kbGF9fdAe8odnPtqvZxdQHaHj?w=176&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3',
-          width: 200,
-          height: 200,
-        ),
-      ],
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          // TextButton
+          TextButton(
+            style: TextButton.styleFrom(
+              foregroundColor: Colors.redAccent,
+            ),
+            onPressed: () {
+              print('Pressed TextButton');
+            },
+            child: const Text(
+              'TextButton',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+
+          // ระยะห่าง
+          const SizedBox(height: 20),
+
+          // FilledButton
+          FilledButton(
+            onPressed: () {
+              print('Pressed FilledButton');
+            },
+            child: const Text(
+              'FilledButton',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+
+          // ระยะห่าง
+          const SizedBox(height: 20),
+
+          // OutlinedButton
+          OutlinedButton(
+            style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.blueAccent,
+              side: const BorderSide(
+                color: Colors.blueAccent,
+                width: 2,
+              ),
+            ),
+            onPressed: () {
+              print('Pressed OutlinedButton');
+            },
+            child: const Text(
+              'OutlinedButton',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+
+          // ระยะห่าง
+          const SizedBox(height: 20),
+
+          // ElevatedButton
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.greenAccent,
+              foregroundColor: Colors.black,
+            ),
+            onPressed: () {
+              print('Pressed ElevatedButton');
+            },
+            child: const Text(
+              'ElevatedButton',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
