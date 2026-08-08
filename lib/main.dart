@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:learn_flutter_68_1/Screen/home.dart';
+import 'screen/home.dart';
+
 void main() {
   runApp(
     MaterialApp(
@@ -17,4 +18,3 @@ void main() {
     ),
   );
 }
-
