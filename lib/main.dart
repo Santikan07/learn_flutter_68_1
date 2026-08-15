@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter_68_1/Screen/item.dart';
+import 'package:learn_flutter_68_1/Screen/addForm.dart';
 
 void main() {
   runApp(
@@ -12,6 +13,13 @@ void main() {
           centerTitle: true,
         ),
         body: const Item(),
+
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            print("Add Person");
+          },
+          child: const Icon(Icons.add),
+        ),
       ),
     ),
   );
