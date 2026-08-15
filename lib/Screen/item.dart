@@ -8,84 +8,37 @@ class Item extends StatefulWidget {
 }
 
 class _ItemState extends State<Item> {
-  int quantity = 10;
-
-  void incrementQuantity() {
-    setState(() {
-      quantity++;
-    });
-  }
-
-  void decrementQuantity() {
-    setState(() {
-      if (quantity > 0) {
-        quantity--;
-      }
-    });
-  }
+  List data = [
+    "สมชาย",
+    "สมศรี",
+    "สมปอง",
+    "สมหมาย",
+    "สมจิตร",
+    "สมพร",
+    "สมบัติ",
+    "สมฤดี",
+    "สมศักดิ์",
+    "สมใจ",
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          // แสดงจำนวน
-          Text(
-            'Quantity: $quantity',
-            style: const TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-            ),
+    return ListView.builder(
+      itemCount: data.length,
+      itemBuilder: (context, index) {
+        return Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.black),
+            borderRadius: BorderRadius.circular(10),
           ),
-
-          const SizedBox(height: 20),
-
-          // ปุ่ม Increment
-          ElevatedButton(
-            onPressed: incrementQuantity,
-            child: const Text(
-              'Increment',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-
-          const SizedBox(height: 20),
-
-          // ปุ่ม Decrement และ Increment
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: decrementQuantity,
-                child: const Text(
-                  'Decrement',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-
-              const SizedBox(width: 20),
-
-              ElevatedButton(
-                onPressed: incrementQuantity,
-                child: const Text(
-                  'Increment',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
+          margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+          padding: EdgeInsets.all(30),
+          child: Text(
+            data[index],
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          )
+        );
+      },
     );
   }
 }
