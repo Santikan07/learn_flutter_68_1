@@ -16,7 +16,7 @@ class _ItemState extends State<Item> {
       itemBuilder: (context, index) {
         return Container(
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.black),
+            color: people[index].job.color,
             borderRadius: BorderRadius.circular(10),
           ),
           margin: const EdgeInsets.symmetric(
@@ -42,11 +42,17 @@ class _ItemState extends State<Item> {
                     style: const TextStyle(fontSize: 16),
                   ),
                   Text(
-                    "อาชีพ: ${people[index].job}",
+                    "อาชีพ: ${people[index].job.title}",
                     style: const TextStyle(fontSize: 16),
                   ),
                 ],
               ),
+              Image.asset(
+                people[index].job.image,
+                width: 80,
+                height: 80,
+                fit: BoxFit.cover,
+              )
             ],
           ),
         );
